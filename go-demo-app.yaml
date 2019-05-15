@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: go-demo-app
+  labels:
+    type: stack
+spec:
+  containers:
+  - image: mongo:3.3
+    name: db
