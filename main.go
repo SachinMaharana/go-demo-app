@@ -62,8 +62,8 @@ func setupDb() {
 	if len(db) == 0 {
 		db = "localhost"
 	}
-
 	session, err := mgo.Dial(db)
+	fmt.Println(session)
 
 	if err != nil {
 		panic(err)
@@ -115,6 +115,7 @@ func PersonServer(w http.ResponseWriter, req *http.Request) {
 
 	if req.Method == "PUT" {
 		name := req.URL.Query().Get("name")
+		fmt.Println("name", name)
 		if _, err := upsertID(name, &Person{
 			Name: name,
 		}); err != nil {
