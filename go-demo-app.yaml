@@ -8,3 +8,8 @@ spec:
   containers:
   - image: mongo:3.3
     name: db
+  - name: api
+    image: sachinnicky/go-demo-app:latest
+    env:
+    - name: DB
+      value: localhost
